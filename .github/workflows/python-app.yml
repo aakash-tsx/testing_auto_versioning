@@ -37,10 +37,9 @@ jobs:
         
     - name: Authenticate with DagsHub
       run: |
-        python -c "import os; import dagshub; dagshub.auth.add_app_token(os.getenv('DAGSHUB_TOKEN'))"
-      env:
-        DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
-
-    - name: Test with pytest
+        dags login --username=${{ secrets.DAGSHUB_USERNAME }} --password=${{ secrets.DAGSHUB_PASSWORD }}
+        dags remote add origin https://dagshub.com/<your_username>/<your_repo_name>.git  # Add the remote
+    - name: Run experiment and log commit
       run: |
-        pytest main.py
+        python main.py  # Your main script execution
+        dags log-commit -m "GitHub Actions run: ${{ github.sha }}" # Log the commit. Use github.sha for commit hash.
