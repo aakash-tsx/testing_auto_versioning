@@ -67,13 +67,14 @@ class ModelEvaluation:
     def __init__(self, config: ModelEvalConfig):
         self.config = config
 
-        # Authenticate with DagsHub
-        dagshub.auth.add_app_token("d41a825c7a79a6f5f1f6699c4cfa28674c4baaf2")
-
         # Set MLflow tracking to DagsHub
         mlflow.set_tracking_uri(
             "https://dagshub.com/aakash-tsx/testing_auto_versioning.mlflow"
         )
+
+        # Authenticate with DagsHub
+        dagshub.auth.add_app_token("d41a825c7a79a6f5f1f6699c4cfa28674c4baaf2")
+        
         mlflow.set_experiment("Model_Evaluation")
 
     def eval_metrics(self, actual, pred):
