@@ -20,6 +20,7 @@ class ModelEvaluation:
 
         # Set MLflow tracking to DagsHub
         mlflow.set_tracking_uri("https://dagshub.com/aakash-tsx/testing_auto_versioning.mlflow")
+        
         mlflow.set_experiment("Model_Evaluation")
 
     def eval_metrics(self, actual, pred):
