@@ -63,11 +63,6 @@ from src.entity.config_entities import ModelEvalConfig
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import subprocess
 
-# # Get the Git commit hash
-# commit_hash = subprocess.check_output(["git", "rev-parse", "HEAD"]).strip().decode()
-
-# # Ensure MLflow logs the commit
-# mlflow.set_tag("mlflow.source.git.commit", commit_hash)
 
 dagshub.init(repo_owner="aakash-tsx", repo_name="testing_auto_versioning", mlflow=True)
 
@@ -80,6 +75,8 @@ class ModelEvaluation:
         mlflow.set_tracking_uri(
             "https://dagshub.com/aakash-tsx/testing_auto_versioning.mlflow"
         )
+
+        mlflow.set_experiment("Model_Evaluation")
 
     def eval_metrics(self, actual, pred):
         return {
@@ -100,11 +97,13 @@ class ModelEvaluation:
 
         with mlflow.start_run():
 
-            mlflow.set_experiment("Model_Evaluation")
-
             # Get the Git commit hash
             commit_hash = (
                 subprocess.check_output(["git", "rev-parse", "HEAD"]).strip().decode()
+            )
+
+            print(
+                f"#######################     {commit_hash}     #########################"
             )
 
             # Ensure MLflow logs the commit
