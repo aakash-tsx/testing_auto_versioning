@@ -61,15 +61,13 @@ import json
 from pathlib import Path
 from src.entity.config_entities import ModelEvalConfig
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+import subprocess
 
-# Authenticate DagsHub
-dagshub.auth.add_app_token(os.getenv('DAGSHUB_TOKEN'))
+# Get the Git commit hash
+commit_hash = subprocess.check_output(["git", "rev-parse", "HEAD"]).strip().decode()
 
-# # Get the Git commit hash
-# commit_hash = subprocess.check_output(['git', 'rev-parse', 'HEAD']).strip().decode()
-
-# # Ensure MLflow logs the commit
-# mlflow.set_tag("mlflow.source.git.commit", commit_hash)
+# Ensure MLflow logs the commit
+mlflow.set_tag("mlflow.source.git.commit", commit_hash)
 
 dagshub.init(repo_owner="aakash-tsx", repo_name="testing_auto_versioning", mlflow=True)
 
