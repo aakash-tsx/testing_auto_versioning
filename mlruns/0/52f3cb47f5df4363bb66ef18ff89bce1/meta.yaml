@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/aks7d/MLOps/testing_auto_versioning/mlruns/0/52f3cb47f5df4363bb66ef18ff89bce1/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 52f3cb47f5df4363bb66ef18ff89bce1
+run_name: victorious-bird-305
+run_uuid: 52f3cb47f5df4363bb66ef18ff89bce1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1740163017904
+status: 1
+tags: []
+user_id: aks7d
