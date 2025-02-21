@@ -37,8 +37,9 @@ jobs:
         
     - name: Authenticate with DagsHub
       run: |
-        export DAGSHUB_TOKEN=${{ secrets.DAGSHUB_TOKEN }}
-        dagshub.login()
+        python -c "import os; import dagshub; dagshub.auth.add_app_token(os.getenv('DAGSHUB_TOKEN'))"
+      env:
+        DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
 
     - name: Test with pytest
       run: |
