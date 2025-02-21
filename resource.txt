@@ -1,0 +1,45 @@
+# 1️⃣ Initialize Git & DVC
+git init
+dvc init
+git add .dvc .dvcignore
+git commit -m "Initialize DVC for model tracking"
+
+
+# 2️⃣ Track Code with Git
+git add train.py model.py config.yaml requirements.txt
+git commit -m "Add training script and configuration"
+
+
+# 3️⃣ Track Datasets & Models with DVC
+dvc add data/ models/model.pth
+git add data.dvc models.dvc
+git commit -m "Track dataset and trained model using DVC"
+
+
+# 4️⃣ Push Code & DVC Metadata to GitHub
+git remote add origin https://github.com/your-username/your-repo.git
+git branch -M main
+git push -u origin main
+
+
+# 5️⃣ Configure & Push Dataset & Model to Remote Storage
+dvc remote add myremote s3://my-bucket
+dvc push  # Pushes dataset and model to remote storage
+
+
+# 6️⃣ Add Version Tags (Code + Model)
+git tag -a v1.0.0 -m "First stable model version"
+dvc tag add v1.0.0
+git commit -m "Add version tag v1.0.0 for model and data"
+git push origin --tags  # Pushes all Git tags
+dvc push  # Ensures DVC remote has the latest version
+
+
+# 7️⃣ List Available Versions
+git tag   # Lists Git version tags
+dvc tag list  # Lists DVC version tags
+
+
+# 8️⃣ Restore a Specific Version
+git checkout v1.0.0
+dvc checkout
