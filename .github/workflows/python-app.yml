@@ -40,13 +40,6 @@ jobs:
         python -c "import os; import dagshub; dagshub.auth.add_app_token(os.getenv('DAGSHUB_TOKEN'))"
       env:
         DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
-      
-    - name: Ensure Git Metadata is Available
-      run: |
-        git config --global --add safe.directory $(pwd)
-        echo "Current commit: $(git rev-parse HEAD)"
-        echo "Git status:"
-        git status
 
     - name: Test with pytest
       run: |
