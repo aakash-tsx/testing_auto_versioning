@@ -49,8 +49,7 @@ jobs:
           python -m pip install wheel setuptools pip --upgrade
           python3 -m pip install wheel setuptools pip --upgrade
           py -m pip install wheel setuptools pip --upgrade
-          # python -m pip install --upgrade pip
-          # pip install --upgrade pip setuptools
+
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
       - name: Configure AWS Credentials
