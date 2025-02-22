@@ -32,5 +32,5 @@ Flask
 Flask-Cors
 setuptools
 wheel
-python
+# python
 -e .
