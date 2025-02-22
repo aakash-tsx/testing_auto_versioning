@@ -1,36 +1,36 @@
 # pandas 
-# mlflow==2.2.2
+# mlflow
 # notebook
 # numpy
 # scikit-learn
 # matplotlib
-# python-box==6.0.2
+# python-box
 # dagshub
 # pyYAML
 # tqdm
-# ensure==1.0.2
+# ensure
 # joblib
 # types-PyYAML
 # Flask
 # Flask-Cors
 # setuptools
 # wheel
-pandas>=1.5.0, <2.0.0  # Pandas is frequently updated; staying relatively recent is good
-mlflow==2.2.2          # You've specified this
-notebook>=6.0.0, <7.0.0 # Notebook updates are usually backward compatible
-numpy>=1.23.0, <1.25.0  # NumPy is fundamental; a recent version is recommended
-scikit-learn>=1.2.0, <1.3.0 # Scikit-learn should be aligned with MLflow's requirements
-matplotlib>=3.6.0, <3.8.0 # Matplotlib updates are usually safe
-python-box==6.0.2      # You've specified this
-dagshub>=0.2.0, <0.3.0  # Dagshub versions should be reasonably recent. Check their docs.
-pyYAML>=6.0, <7.0       # PyYAML updates are generally backward compatible
-tqdm>=4.65.0, <5.0.0   # TQDM updates are usually safe
-ensure==1.0.2          # You've specified this
-joblib>=1.2.0, <1.3.0  # Joblib is often used with scikit-learn
-types-PyYAML>=6.0.1, <7.0 # Type hints for PyYAML
-Flask>=2.2.0, <3.0.0    # Flask should be a somewhat recent version
-Flask-Cors>=3.0.0, <4.0.0 # Flask-CORS should be aligned with Flask
-setuptools>=60.0.0      # Setuptools should be a recent version
-wheel>=0.38.0           # Wheel should be a recent version
-python>=3.8, <3.11       # Python 3.8 to 3.10 are good choices for ML projects. 3.11 is also generally ok.
+pandas
+mlflow
+notebook
+numpy
+scikit-learn
+matplotlib
+python-box
+dagshub
+pyYAML
+tqdm
+ensure
+joblib
+types-PyYAML
+Flask
+Flask-Cors
+setuptools
+wheel
+python
 -e .
